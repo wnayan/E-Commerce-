@@ -1,0 +1,185 @@
+/* General styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    background-color: #cccccc;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    background-color: #9d9494;
+    padding-top: 20px;
+    overflow-x: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar-header {
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+}
+.sidebar-header h3{
+	margin: 0;
+    text-align: start;
+}
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: start; */
+    align-items: baseline;
+    margin: 0; 
+}
+
+.sidebar ul li {
+        padding: 4px 0px;
+    text-align: center;
+}
+
+.sidebar ul li a {
+       color: white;
+    display: block;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 4px 16px;
+    border-radius: 8px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Content styling */
+.parent {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 400px; /* Fixed height for the card */
+    display: flex;
+    flex-direction: column;
+}
+
+.parent:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.pic {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pic img {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Max height for the image */
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    flex-shrink: 0;
+}
+
+.details .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.details .info h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.details .info p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.details .info .discount {
+    color: red;
+    font-weight: bold;
+}
+
+.desc2 {
+    background: #93979b;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    margin: 10px 0;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.desc2:hover {
+    background: #727579;;
+}
+
+@media (max-width: 1024px) {
+    .content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        width: 100px;
+    }
+
+    .content {
+        margin-left: 100px;
+    }
+}
